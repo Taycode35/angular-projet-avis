@@ -1,1 +1,100 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  color: #fff;
+  background: #63738a;
+  font-family: 'Roboto', sans-serif;
+}
+
+.form-control {
+  height: 40px;
+  box-shadow: none;
+color: #969fa4;
+}
+
+.form-control:focus{
+  border-color: #5cb85c;
+}
+
+.form-control .btn {
+  border-radius: 3px;
+}
+
+/* Réduire la longueur des champs */
+.signinout-form {
+  width: 450px;
+  margin: 0 auto;
+  padding: 70px 0;
+  font-size: 17px;
+}
+
+.signinout-form h2 {
+  columns: #636363;
+  margin: 0 0 15px;
+  position: relative;
+  text-align: center;
+}
+
+.signinout-form h2::before, .signinout-form h2::after {
+  content: "";
+  height: 2px;
+  width: 30%;
+  background: #d4d4d4;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+}
+/* Ligne avant la balise h2 */
+.signinout-form h2::before {
+  left: 0;
+}
+/* Ligne après la balise */
+.signinout-form h2::after {
+  right: 0;
+}
+
+.signinout-form .hint-text {
+  color: #999;
+  margin-bottom: 30px;
+  text-align: center;
+
+}
+
+.signinout-form form {
+  color: #999;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  background: #f2f3f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+
+.signinout-form .form-group {
+  margin-bottom: 20px;
+}
+
+.signinout-form .btn {
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 80px;
+  outline: none !important;
+}
+
+.signinout-form a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.signinout-form a:hover {
+  text-decoration: none;
+}
+
+.signinout-form form a {
+  color: #5cb85c;
+  text-decoration: none;
+}
+
+.signinout-form form a:hover {
+  text-decoration: underline;
+}
+
