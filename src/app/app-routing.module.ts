@@ -8,8 +8,11 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardPlayerComponent } from './board-player/board-player.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { AjoutavisComponent } from './ajoutavis/ajoutavis.component';
+import { AjoutjeuComponent } from './ajoutjeu/ajoutjeu.component';
 
 const routes: Routes = [
+
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -17,7 +20,10 @@ const routes: Routes = [
   { path: 'player', component: BoardPlayerComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
+  { path: 'ajoutavis', component: AjoutavisComponent },
+  { path: 'ajoutjeu', component: AjoutjeuComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
+
 ];
 
 @NgModule({
