@@ -14,6 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+  public isAdmin:boolean = false;
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<any> {

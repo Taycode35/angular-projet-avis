@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { TokenStorageService } from './_services/token-storage.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   private roles: string[] = [];
@@ -13,7 +13,7 @@ export class AppComponent {
   showModeratorBoard = false;
   username?: string;
 
-  constructor(private tokenStorageService: TokenStorageService) { }
+  constructor(private tokenStorageService: TokenStorageService) {}
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
@@ -33,4 +33,6 @@ export class AppComponent {
     this.tokenStorageService.signOut();
     window.location.reload();
   }
+
+
 }

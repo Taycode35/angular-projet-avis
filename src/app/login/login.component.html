@@ -37,10 +37,13 @@
       Vous êtes connecté en tant qu' {{ roles }}.
     </div>
   </div>
+  *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate
 </div> -->
-
+<div class="text-warning text-center m-4 bg-danger" *ngIf="message">
+  Vos identifiants ne sont pas correctes!
+</div>
   <div class="signinout-form">
-    <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit(f.value)" #f="ngForm" novalidate>
       <h2>Login</h2>
       <p class="hint-text">Veuillez vous connecter!</p>
       <!-- <p class="hint-text">Veuillez créer un compte, c'est gratuit!</p> -->

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 
@@ -8,6 +9,10 @@ import { TokenStorageService } from '../_services/token-storage.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  username = "andrick";
+  password = "1234567";
+  message:boolean = false;
+
   form: any = {
     username: null,
     password: null
@@ -17,7 +22,7 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -26,24 +31,45 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onSubmit(): void {
-    const { username, password } = this.form;
+  onSubmit(f:any): void {
 
-    this.authService.login(username, password).subscribe({
-      next: data => {
-        this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUser(data);
+    console.log(f.username);
 
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.roles = this.tokenStorage.getUser().roles;
-        this.reloadPage();
-      },
-      error: err => {
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
-      }
-    });
+    if(f.username == this.username && f.password == this.password){
+      this.authService.isAdmin = true;
+      this.router.navigate(['/boardmoderator'])
+
+    }
+    else {
+      this.message = true;
+    }
+
+    if(f.username != this.username && f.password != this.password){
+      this.authService.isAdmin = false;
+      this.router.navigate(['/boardPlayer'])
+
+    }else {
+      this.message = true;
+    }
+
+
+    // const { username, password } = this.form;
+
+    // this.authService.login(username, password).subscribe({
+    //   next: data => {
+    //     this.tokenStorage.saveToken(data.accessToken);
+    //     this.tokenStorage.saveUser(data);
+
+    //     this.isLoginFailed = false;
+    //     this.isLoggedIn = true;
+    //     this.roles = this.tokenStorage.getUser().roles;
+    //     this.reloadPage();
+    //   },
+    //   error: err => {
+    //     this.errorMessage = err.error.message;
+    //     this.isLoginFailed = true;
+    //   }
+    // });
   }
 
   reloadPage(): void {

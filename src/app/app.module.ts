@@ -14,6 +14,10 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardPlayerComponent } from './board-player/board-player.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { ListAvisModeratorComponent } from './list-avis-moderator/list-avis-moderator.component';
+import { ListAvisGamingComponent } from './list-avis-gaming/list-avis-gaming.component';
+import { ListAvisPlayerComponent } from './list-avis-player/list-avis-player.component';
+import { AjouterJeuComponent } from './ajouter-jeu/ajouter-jeu.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     ProfileComponent,
     BoardAdminComponent,
     BoardModeratorComponent,
-    BoardPlayerComponent
+    BoardPlayerComponent,
+    ListAvisModeratorComponent,
+    ListAvisGamingComponent,
+    ListAvisPlayerComponent,
+    AjouterJeuComponent
   ],
   imports: [
     BrowserModule,

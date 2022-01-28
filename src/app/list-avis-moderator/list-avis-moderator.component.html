@@ -1,0 +1,133 @@
+<h2>Liste des avis Moderateur</h2>
+<div class="container list-avis">
+  <table class="table table-hover table-striped table-font">
+    <div class="container">
+      <table class="table table-hover table-striped table-font">
+        <thead class="table-dark theadTableAvis">
+          <tr>
+            <th scope="col">Date d'envoi</th>
+            <th scope="col">Nom du jeu</th>
+            <th scope="col">Pseudo du joueur</th>
+            <th scope="col">Note</th>
+            <th scope="col">Image</th>
+            <th scope="col">Statut</th>
+            <th scope="col">Opérations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of avis">
+            <td>{{a.dateEnvoi}}</td>
+            <td>{{a.jeu?.nom}}</td>
+            <td>{{a.joueur?.pseudo}}</td>
+            <td>{{a.note}}</td>
+            <td>{{a.image}}</td>
+            <td></td>  <!-- Statut -->
+            <td><input type="button" value="Voir" class="btn btn-primary"></td>
+          </tr>
+        </tbody>
+    <tfoot>
+      <nav aria-label="...">
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#">2</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+
+    </tfoot>
+  </table>
+  <div class="group-button">
+    <a href="#" routerLink="#" type="button" class="btn btn-outline-warning">Export</a>
+    <a href="/listeJeu" routerLink="/listeJeu" class="btn btn-outline-info">Liste des jeux</a>
+  </div>
+
+</div>
+
+
+<!-- <h2>Liste des avis</h2>
+<div class="container list-avis">
+
+  <div class="add-button addButton">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a href="/addGame" routerLink="/addGame" class="nav-link active addButton" aria-current="page">Ajouter un jeu</a>
+      </li>
+    </ul>
+  </div>
+
+  <table class="table table-hover table-striped table-font">
+    <thead class="table-dark theadTableAvis">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Date d'envoi</th>
+        <th scope="col">Nom du jeu</th>
+        <th scope="col">Pseudo du joueur</th>
+        <th scope="col">Image</th>
+        <th scope="col">Statut</th>
+        <th scope="col">Opérations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <tr>
+        <th scope="row">1</th>
+        <td>18/01/2022<br>08:12</td>
+        <td>Fortnite</td>
+        <td>C.LAURENT</td>
+        <td>15</td>
+        <td>A modérer</td>
+        <td><input type ="button" value="Voir" class="btn btn-primary"></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>18/01/2022<br>09:22</td>
+        <td>Fortnite</td>
+        <td>KISHIMOTO</td>
+        <td>17</td>
+        <td>Modéré par Chloé</td>
+        <td><a href="#"><button type="button" class="btn btn-primary">Voir</button></a></td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>18/01/2022<br>09:22</td>
+        <td>Advenced War</td>
+        <td>Roy</td>
+        <td>17</td>
+        <td>Modéré par Chloé</td>
+        <td><a href="#"><button type="button" class="btn btn-primary">Voir</button></a></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <nav aria-label="...">
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#">2</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+
+    </tfoot>
+  </table>
+  <div class="group-button">
+    <button type="button" class="btn btn-outline-warning">Export</button>
+    <button type="button" class="btn btn-outline-info">Liste des jeux</button>
+  </div>
+
+</div> -->
+

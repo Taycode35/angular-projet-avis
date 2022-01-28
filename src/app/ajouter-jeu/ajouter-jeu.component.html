@@ -1,0 +1,63 @@
+<div class="form-container signinout-form">
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm" novalidate>
+    <h2>Ajouter un jeu</h2>
+    <div class="form-group">
+      <label for="nom">Nom</label>
+      <input type="nom" name="nom" [(ngModel)]="jeu.nom" class="form-control" id="nom" aria-describedby="nom"
+        placeholder="Veuillez mettre votre nom">
+      <!-- <small id="nom" class="form-text text-muted">We'll never share your information with anyone else.</small> -->
+    </div>
+    <br>
+    <div class="form-group">
+      <select class="form-select" aria-label="Default select example" #edit>
+        <option value="" disabled selected>Veuillez choisir l'Editeur</option>
+        <option *ngFor="let ed of editeur" [ngValue]="ed">{{ed.nom}}</option>
+      </select>
+    </div>
+    <br>
+    <div class="mb-3">
+      <label for="dateSortie" class="form-label">Date de sortie</label>
+      <input type="date" name="dateSortie" [(ngModel)]="jeu.dateSortie" class="form-control" id="dateSortie"
+        #dateSortie>
+    </div>
+    <br>
+    <div class="form-floating">
+      <label for="desc">Description</label>
+      <textarea class="form-control" name="desc" [(ngModel)]="jeu.description" placeholder="Leave a comment here"
+        id="desc" style="height: 100px" #desc></textarea>
+    </div>
+    <br>
+    <div class="form-group">
+      <select name="genre" class="form-select" aria-label="Default select example">
+        <option value="" disabled selected>Veuillez choisir le genre</option>
+        <option *ngFor="let g of genre" value="{{g}}">{{g.nom}}</option>
+      </select>
+    </div>
+    <br>
+    <div class="form-group">
+      <select class="form-select" aria-label="Default select example" #cla>
+        <option value="" disabled selected>Classification</option>
+        <option *ngFor="let c of classification" value="{{c}}">{{c.nom}}</option>
+
+      </select>
+    </div>
+    <br>
+    <div class="form-group">
+      <select multiple class="form-select" size="3" aria-label="size 3 select example" #pla>
+        <option value="" disabled selected>Veuillez choisir la plateforme</option>
+        <option *ngFor="let p of plateformes" value="{{p}}">{{p.nom}}</option>
+      </select>
+    </div>
+    <br>
+    <div class="form-group">
+      <select multiple class="form-select" aria-label="Default select example" >
+        <option value="" disabled selected>Veuillez choisir le modèle économique</option>
+        <option *ngFor="let m of modeleEconomique" value="{{m}}">{{m.nom}}</option>
+      </select>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="#" routerLink="/post/index" class="btn btn-primary">Liste des jeux</a>
+    <br>
+  </form>
+</div>

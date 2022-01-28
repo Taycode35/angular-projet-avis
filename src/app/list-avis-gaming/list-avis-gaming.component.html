@@ -1,0 +1,40 @@
+<h2>Liste des jeux</h2>
+<div class="container list-avis">
+  <table class="table table-hover table-striped table-font">
+    <thead class="table-dark theadTableAvis">
+      <tr>
+        <th>Image</th>
+        <th>Nom</th>
+        <th>Editeur</th>
+        <th>Opérations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let j of jeu">
+        <td>{{j.image}}</td>
+        <td>{{j.nom}}</td>
+        <td>{{j.editeur.nom}}</td>
+        <td class="buttonposition">
+          <input type="button" value="Voir" class="btn btn-primary">
+          <input type="button" value="Modifier" class="btn btn-success">
+          <input type="button" value="Téléverser image" class="btn btn-warning">
+        </td>
+      </tr>
+    <tfoot>
+      <p>Pied de page - Avis gaming</p>
+    </tfoot>
+  </table>
+  <div class="group-button">
+    <a href="/addGame" routerLink="/addGame" class="nav-link active addButton" aria-current="page">Ajouter un jeu</a>
+    <button type="button" class="btn btn-outline-info">Liste avis</button>
+  </div>
+  <!-- <a href="/register" class="nav-link" routerLink="register">Sign up</a> -->
+</div>
+
+<!-- <div class="add-button addButton">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a href="/addGame" routerLink="/addGame" class="nav-link active addButton" aria-current="page">Ajouter un jeu</a>
+    </li>
+  </ul>
+</div> -->

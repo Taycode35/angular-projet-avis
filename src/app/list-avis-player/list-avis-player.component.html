@@ -1,0 +1,30 @@
+<div class="container">
+
+  <table class="table table-hover table-striped table-font">
+    <thead class="table-dark theadTableAvis">
+      <tr>
+        <th scope="col">Date d'envoi</th>
+        <th scope="col">Nom du jeu</th>
+        <th scope="col">Pseudo du joueur</th>
+        <th scope="col">Note</th>
+        <th scope="col">Image</th>
+        <th scope="col">Statut</th>
+        <th scope="col">Opérations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of avis">
+        <td>{{a.dateEnvoi}}</td>
+        <td>{{a.jeu?.nom}}</td>
+        <td>{{a.joueur?.pseudo}}</td>
+        <td>{{a.note}}</td>
+        <td>{{a.image}}</td>
+        <td></td>  <!-- Statut -->
+        <td><input type="button" value="Voir" class="btn btn-primary"></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <p>Pied de page - Liste Avis Joueurs -</p>
+    </tfoot>
+  </table>
+</div>
